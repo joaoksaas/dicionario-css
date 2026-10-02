@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dicionário CSS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="doc-menu">
+    <h1>Dicionário CSS</h1>
+    <a href="#caixas">1. Caixas</a>
+    <a href="#botoes">2. Botões</a>
+    <a href="#gradientes">3. Gradientes</a>
+    <a href="#layout">4. Layout</a>
+    <a href="#cards">5. Cards e badges</a>
+    <a href="#cabecalho">6. Cabeçalho</a>
+    <a href="#lateral">7. Barra lateral</a>
+    <a href="#rodape">8. Rodapé</a>
+    <a href="#carrossel">9. Carrossel</a>
+    <a href="#animacoes">10. Animações</a>
+    <a href="#formulario">11. Formulário</a>
+    <a href="#tipografia">12. Tipografia</a>
+    <a href="#alertas">13. Alertas e progresso</a>
+    <a href="#interruptor">14. Interruptor</a>
+    <a href="#acordeao">15. Acordeão</a>
+    <a href="#tooltip">16. Tooltip</a>
+    <a href="#modais">17. Modal</a>
+    <a href="#hamburguer">18. Menu hambúrguer</a>
+    <a href="#tabela">19. Tabela</a>
+    <a href="#posicao">20. Posicionamento</a>
+    <a href="#hero">21. Hero</a>
+    <a href="#efeitos">22. Efeitos</a>
+    <a href="#img-tamanho">23. Imagens: tamanho</a>
+    <a href="#img-posicao">24. Imagens: posição</a>
+    <a href="#img-fundo">25. Imagem de fundo</a>
+    <a href="#img-efeitos">26. Imagens: filtros</a>
+  </nav>
+
+  <main class="doc-main">
+    <p class="doc-intro">Veja o componente aqui, procure a classe indicada no <code>style.css</code> e copie o bloco. Cada seção do CSS tem o mesmo número desta página.</p>
+
+    <!-- 1. CAIXAS -->
+    <h2 id="caixas">1. Caixas</h2>
+    <p class="doc-intro">padding, border, border-radius, box-shadow, backdrop-filter</p>
+    <article class="doc-item">
+      <header><h3>Borda, tracejada, sombra, círculo</h3><code>.box .box--borda .box--tracejada .box--sombra .box--circulo</code></header>
+      <div class="doc-palco">
+        <div class="box box--borda">Borda sólida</div>
+        <div class="box box--tracejada">Borda tracejada</div>
+        <div class="box box--sombra">Com sombra</div>
+        <div class="box--circulo">Círculo</div>
+      </div>
+      <p class="doc-dica">border-radius: 50% faz círculo (largura = altura). box-shadow: x y desfoque cor.</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Efeito vidro</h3><code>.box--vidro</code></header>
+      <div class="doc-palco fundo-grad">
+        <div class="box box--vidro">Vidro fosco</div>
+      </div>
+      <p class="doc-dica">backdrop-filter: blur() + fundo rgba semitransparente. Só aparece sobre um fundo colorido.</p>
+    </article>
+
+    <!-- 2. BOTÕES -->
+    <h2 id="botoes">2. Botões</h2>
+    <p class="doc-intro">hover, focus-visible, transition, disabled</p>
+    <article class="doc-item">
+      <header><h3>Variações de botão</h3><code>.btn .btn--primario .btn--contorno .btn--gradiente .btn--pill .btn--elevar</code></header>
+      <div class="doc-palco">
+        <button class="btn btn--primario">Primário</button>
+        <button class="btn btn--contorno">Contorno</button>
+        <button class="btn btn--gradiente btn--pill btn--elevar">Gradiente pill</button>
+        <button class="btn btn--primario" disabled>Desativado</button>
+      </div>
+      <p class="doc-dica">transition suaviza o :hover. Combine classes: .btn + modificadores. Passe o mouse e use Tab para ver o foco.</p>
+    </article>
+
+    <!-- 3. GRADIENTES -->
+    <h2 id="gradientes">3. Gradientes</h2>
+    <p class="doc-intro">linear-gradient, radial-gradient, conic-gradient, background-clip</p>
+    <article class="doc-item">
+      <header><h3>Tipos de gradiente</h3><code>.grad--linear .grad--diagonal .grad--radial .grad--conico .grad--texto</code></header>
+      <div class="doc-palco">
+        <div class="grad grad--linear"></div>
+        <div class="grad grad--diagonal"></div>
+        <div class="grad grad--radial"></div>
+        <div class="grad grad--conico"></div>
+        <span class="grad--texto">Texto gradiente</span>
+      </div>
+      <p class="doc-dica">O ângulo (90deg, 135deg) define a direção. Texto: background-clip: text + color: transparent.</p>
+    </article>
+
+    <!-- 4. LAYOUT -->
+    <h2 id="layout">4. Layout</h2>
+    <p class="doc-intro">display flex e grid, gap, place-items</p>
+    <article class="doc-item">
+      <header><h3>Flexbox em linha</h3><code>.flex-linha</code></header>
+      <div class="doc-palco">
+        <div class="flex-linha"><div class="item">A</div><div class="item">B</div><div class="item">C</div></div>
+      </div>
+      <p class="doc-dica">justify-content: eixo horizontal (space-between, center, flex-end). align-items: eixo vertical.</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Grid de 3 colunas e grid responsivo</h3><code>.grid-3 .grid-auto</code></header>
+      <div class="doc-palco">
+        <div class="grid-3"><div class="item">1</div><div class="item">2</div><div class="item">3</div></div>
+        <div class="grid-auto"><div class="item">auto</div><div class="item">auto</div><div class="item">auto</div><div class="item">auto</div></div>
+      </div>
+      <p class="doc-dica">repeat(auto-fit, minmax(120px, 1fr)) cria colunas que se ajustam sozinhas ao tamanho da tela.</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Centralizar tudo</h3><code>.centralizar</code></header>
+      <div class="doc-palco"><div class="centralizar">Centro perfeito</div></div>
+      <p class="doc-dica">display: grid + place-items: center centraliza na horizontal e na vertical.</p>
+    </article>
+
+    <!-- 5. CARDS -->
+    <h2 id="cards">5. Cards e badges</h2>
+    <p class="doc-intro">overflow, transform no hover, convenção BEM (bloco__elemento)</p>
+    <article class="doc-item">
+      <header><h3>Card com elevação no hover</h3><code>.card .card__img .card__corpo .badge</code></header>
+      <div class="doc-palco">
+        <div class="card">
+          <div class="card__img"></div>
+          <div class="card__corpo"><span class="badge">Novo</span><h4>Título do card</h4><p>Passe o mouse para ele subir.</p></div>
+        </div>
+      </div>
+      <p class="doc-dica">overflow: hidden mantém a imagem dentro das bordas arredondadas. transform: translateY(-6px) levanta.</p>
+    </article>
+
+    <!-- 6. CABEÇALHO -->
+    <h2 id="cabecalho">6. Cabeçalho</h2>
+    <p class="doc-intro">flex, space-between, pseudo-elemento ::after</p>
+    <article class="doc-item">
+      <header><h3>Cabeçalho com menu e sublinhado animado</h3><code>.cabecalho</code></header>
+      <div class="doc-palco">
+        <header class="cabecalho">
+          <strong>Logo</strong>
+          <nav><a href="#cabecalho">Início</a><a href="#cabecalho">Projetos</a><a href="#cabecalho">Contato</a></nav>
+        </header>
+      </div>
+      <p class="doc-dica">::after com width 0 → 100% no hover faz o sublinhado crescer. Veja o comentário no CSS para fixar no topo (sticky).</p>
+    </article>
+
+    <!-- 7. LATERAL -->
+    <h2 id="lateral">7. Barra lateral</h2>
+    <p class="doc-intro">largura fixa + flex: 1 no conteúdo</p>
+    <article class="doc-item">
+      <header><h3>Menu lateral com item ativo</h3><code>.layout-lateral .lateral a.ativo</code></header>
+      <div class="doc-palco">
+        <div class="layout-lateral">
+          <aside class="lateral"><a class="ativo" href="#lateral">Painel</a><a href="#lateral">Relatórios</a><a href="#lateral">Configurações</a></aside>
+          <section class="layout-lateral__conteudo">Conteúdo principal ao lado da barra.</section>
+        </div>
+      </div>
+      <p class="doc-dica">flex-shrink: 0 impede a barra de encolher; flex: 1 faz o conteúdo ocupar o resto.</p>
+    </article>
+
+    <!-- 8. RODAPÉ -->
+    <h2 id="rodape">8. Rodapé</h2>
+    <p class="doc-intro">grid com colunas de tamanhos diferentes (2fr 1fr 1fr)</p>
+    <article class="doc-item">
+      <header><h3>Rodapé em 3 colunas</h3><code>.rodape</code></header>
+      <div class="doc-palco">
+        <footer class="rodape">
+          <div><h4>Meu Site</h4><p>Uma frase curta sobre o projeto.</p></div>
+          <div><h4>Links</h4><a href="#rodape">Sobre</a><a href="#rodape">Blog</a></div>
+          <div><h4>Contato</h4><a href="#rodape">E-mail</a><a href="#rodape">GitHub</a></div>
+        </footer>
+      </div>
+      <p class="doc-dica">O @media (max-width: 600px) empilha as colunas no celular. Reduza a janela para ver.</p>
+    </article>
+
+    <!-- 9. CARROSSEL -->
+    <h2 id="carrossel">9. Carrossel</h2>
+    <p class="doc-intro">@keyframes translateX e scroll-snap</p>
+    <article class="doc-item">
+      <header><h3>Automático (pausa no hover)</h3><code>.carrossel .carrossel__trilho .carrossel__slide</code></header>
+      <div class="doc-palco">
+        <div class="carrossel">
+          <div class="carrossel__trilho">
+            <div class="carrossel__slide cor-1">Slide 1</div>
+            <div class="carrossel__slide cor-2">Slide 2</div>
+            <div class="carrossel__slide cor-3">Slide 3</div>
+          </div>
+        </div>
+      </div>
+      <p class="doc-dica">O trilho tem 300% de largura (3 slides) e a animação desloca -33,33% por vez. overflow: hidden esconde o resto.</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Arrastável, sem JavaScript</h3><code>.carrossel-snap</code></header>
+      <div class="doc-palco">
+        <div class="carrossel-snap"><div class="cor-1">Item 1</div><div class="cor-2">Item 2</div><div class="cor-3">Item 3</div></div>
+      </div>
+      <p class="doc-dica">overflow-x: auto + scroll-snap-type: x mandatory; cada item usa scroll-snap-align: center. Arraste ou use o scroll lateral.</p>
+    </article>
+
+    <!-- 10. ANIMAÇÕES -->
+    <h2 id="animacoes">10. Animações</h2>
+    <p class="doc-intro">@keyframes + animation (nome, duração, timing, repetição)</p>
+    <article class="doc-item">
+      <header><h3>Pulso, giro, flutuar, mudar cor, spinner</h3><code>.anim--pulso .anim--girar .anim--flutuar .anim--cor .carregando</code></header>
+      <div class="doc-palco">
+        <div class="anim anim--pulso"></div>
+        <div class="anim anim--girar"></div>
+        <div class="anim anim--flutuar"></div>
+        <div class="anim anim--cor"></div>
+        <div class="carregando"></div>
+      </div>
+      <p class="doc-dica">animation: nome duração timing infinite. Copie o @keyframes com o mesmo nome junto com a classe.</p>
+    </article>
+
+    <!-- 11. FORMULÁRIO -->
+    <h2 id="formulario">11. Formulário</h2>
+    <p class="doc-intro">:focus, box-shadow como anel de foco</p>
+    <article class="doc-item">
+      <header><h3>Campo com foco destacado</h3><code>.campo</code></header>
+      <div class="doc-palco">
+        <div class="campo"><label for="nome">Nome</label><input id="nome" type="text" placeholder="Clique para focar"></div>
+      </div>
+      <p class="doc-dica">box-shadow: 0 0 0 4px cor cria um anel em volta, sem mudar o tamanho do campo.</p>
+    </article>
+    <!-- 12. TIPOGRAFIA -->
+    <h2 id="tipografia">12. Tipografia</h2>
+    <p class="doc-intro">clamp(), line-height, max-width em ch, text-overflow</p>
+    <article class="doc-item">
+      <header><h3>Título fluido, parágrafo e texto cortado</h3><code>.texto-titulo .texto-corpo .texto-truncar .texto-linhas</code></header>
+      <div class="doc-palco">
+        <h1 class="texto-titulo">Título que cresce com a tela</h1>
+        <p class="texto-corpo">max-width: 60ch limita a linha a cerca de 60 caracteres, o que facilita a leitura. line-height: 1.7 dá respiro entre as linhas.</p>
+        <p class="texto-truncar">Este texto é longo demais e termina com reticências</p>
+        <p class="texto-linhas">Este texto é limitado a duas linhas e o restante é cortado com reticências no final, mesmo sendo bem comprido.</p>
+      </div>
+      <p class="doc-dica">clamp(mínimo, ideal, máximo) faz a fonte escalar sem media query.</p>
+    </article>
+
+    <!-- 13. ALERTAS -->
+    <h2 id="alertas">13. Alertas e barra de progresso</h2>
+    <p class="doc-intro">border-left colorida, overflow hidden, width em %</p>
+    <article class="doc-item">
+      <header><h3>Alertas e progresso</h3><code>.alerta--sucesso .alerta--erro .alerta--aviso .progresso</code></header>
+      <div class="doc-palco">
+        <div class="alerta alerta--sucesso">Salvo com sucesso.</div>
+        <div class="alerta alerta--erro">Algo deu errado. Tente novamente.</div>
+        <div class="alerta alerta--aviso">Atenção: revise os dados.</div>
+        <div class="progresso"><div class="progresso__barra"></div></div>
+      </div>
+      <p class="doc-dica">Mude a largura de .progresso__barra (65%) para mudar o progresso.</p>
+    </article>
+
+    <!-- 14. INTERRUPTOR -->
+    <h2 id="interruptor">14. Interruptor</h2>
+    <p class="doc-intro">checkbox escondido + :checked + span</p>
+    <article class="doc-item">
+      <header><h3>Toggle liga/desliga</h3><code>.interruptor</code></header>
+      <div class="doc-palco">
+        <label class="interruptor"><input type="checkbox"><span></span></label>
+        <label class="interruptor"><input type="checkbox" checked><span></span></label>
+      </div>
+      <p class="doc-dica">O seletor input:checked + span estiliza o elemento seguinte ao checkbox marcado. Sem JavaScript.</p>
+    </article>
+
+    <!-- 15. ACORDEÃO -->
+    <h2 id="acordeao">15. Acordeão</h2>
+    <p class="doc-intro">&lt;details&gt; e &lt;summary&gt; nativos do HTML</p>
+    <article class="doc-item">
+      <header><h3>Perguntas frequentes</h3><code>.acordeao</code></header>
+      <div class="doc-palco">
+        <div class="acordeao">
+          <details open><summary>O que é CSS?</summary><p>Linguagem que define a aparência de uma página.</p></details>
+          <details><summary>Preciso de JavaScript?</summary><p>Não, o abrir e fechar é nativo do HTML.</p></details>
+        </div>
+      </div>
+      <p class="doc-dica">details[open] seleciona o item aberto; o atributo open no HTML o deixa aberto desde o início.</p>
+    </article>
+
+    <!-- 16. TOOLTIP -->
+    <h2 id="tooltip">16. Tooltip</h2>
+    <p class="doc-intro">content: attr() e pseudo-elemento ::after</p>
+    <article class="doc-item">
+      <header><h3>Dica ao passar o mouse</h3><code>[data-dica]</code></header>
+      <div class="doc-palco">
+        <button class="btn btn--primario" data-dica="Texto da dica">Passe o mouse</button>
+        <span class="badge" data-dica="Funciona em qualquer elemento">Badge</span>
+      </div>
+      <p class="doc-dica">Basta adicionar data-dica="texto" no HTML. O CSS lê o valor com attr(data-dica).</p>
+    </article>
+
+    <!-- 17. MODAL -->
+    <h2 id="modais">17. Modal</h2>
+    <p class="doc-intro">position fixed, inset 0, :target</p>
+    <article class="doc-item">
+      <header><h3>Janela sobreposta sem JavaScript</h3><code>.modal .modal__caixa</code></header>
+      <div class="doc-palco">
+        <a class="btn btn--primario" href="#modal-ex">Abrir modal</a>
+        <div class="modal" id="modal-ex">
+          <div class="modal__caixa">
+            <h4>Título do modal</h4>
+            <p>Conteúdo da janela.</p><br>
+            <a class="btn btn--contorno" href="#modais">Fechar</a>
+          </div>
+        </div>
+      </div>
+      <p class="doc-dica">O link href="#modal-ex" ativa .modal:target. Para controle total (Esc, foco), use JavaScript depois.</p>
+    </article>
+
+    <!-- 18. HAMBÚRGUER -->
+    <h2 id="hamburguer">18. Menu hambúrguer</h2>
+    <p class="doc-intro">checkbox + seletor ~ (irmão geral)</p>
+    <article class="doc-item">
+      <header><h3>Menu que abre e vira X</h3><code>.menu-mobile</code></header>
+      <div class="doc-palco">
+        <div class="menu-mobile">
+          <input type="checkbox" id="menu-ex">
+          <label class="menu-mobile__botao" for="menu-ex" aria-label="Abrir menu"><span></span><span></span><span></span></label>
+          <nav class="menu-mobile__lista"><a href="#hamburguer">Início</a><a href="#hamburguer">Sobre</a><a href="#hamburguer">Contato</a></nav>
+        </div>
+      </div>
+      <p class="doc-dica">As 3 barras viram X com rotate(45deg) e rotate(-45deg) quando o checkbox está marcado.</p>
+    </article>
+
+    <!-- 19. TABELA -->
+    <h2 id="tabela">19. Tabela</h2>
+    <p class="doc-intro">border-collapse, nth-child(even), hover</p>
+    <article class="doc-item">
+      <header><h3>Tabela zebrada</h3><code>.tabela .tabela-rolagem</code></header>
+      <div class="doc-palco">
+        <div class="tabela-rolagem">
+          <table class="tabela">
+            <thead><tr><th>Item</th><th>Qtd</th><th>Preço</th></tr></thead>
+            <tbody>
+              <tr><td>Caneta</td><td>10</td><td>R$ 3,00</td></tr>
+              <tr><td>Caderno</td><td>4</td><td>R$ 18,00</td></tr>
+              <tr><td>Mochila</td><td>1</td><td>R$ 120,00</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <p class="doc-dica">tr:nth-child(even) cria o efeito zebra. A div com overflow-x: auto evita quebrar o layout no celular.</p>
+    </article>
+
+    <!-- 20. POSICIONAMENTO -->
+    <h2 id="posicao">20. Posicionamento</h2>
+    <p class="doc-intro">relative, absolute, sticky, transform para centralizar</p>
+    <article class="doc-item">
+      <header><h3>Absolute dentro de relative</h3><code>.pos-pai .pos-canto .pos-centro</code></header>
+      <div class="doc-palco">
+        <div class="pos-pai"><span class="pos-canto">Novo</span><span class="pos-centro">Centro</span></div>
+      </div>
+      <p class="doc-dica">O filho absolute se posiciona em relação ao pai com position: relative. top/left 50% + translate(-50%, -50%) centraliza.</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Título que gruda ao rolar</h3><code>.pos-rolagem</code></header>
+      <div class="doc-palco">
+        <div class="pos-rolagem">
+          <h5>Título sticky</h5>
+          <p>Linha 1</p><p>Linha 2</p><p>Linha 3</p><p>Linha 4</p><p>Linha 5</p><p>Linha 6</p><p>Linha 7</p><p>Linha 8</p>
+        </div>
+      </div>
+      <p class="doc-dica">position: sticky; top: 0 mantém o elemento visível enquanto a área rola.</p>
+    </article>
+
+    <article class="doc-item">
+      <header><h3>20b. As 9 posições: cantos, bordas e centro</h3><code>.p-sup-esq .p-centro .p-inf-dir ...</code></header>
+      <div class="doc-palco">
+        <div class="pos-nove">
+          <span class="p-sup-esq">sup-esq</span><span class="p-sup-cen">sup-centro</span><span class="p-sup-dir">sup-dir</span>
+          <span class="p-cen-esq">centro-esq</span><span class="p-centro">centro</span><span class="p-cen-dir">centro-dir</span>
+          <span class="p-inf-esq">inf-esq</span><span class="p-inf-cen">inf-centro</span><span class="p-inf-dir">inf-dir</span>
+        </div>
+      </div>
+      <p class="doc-dica">Cantos: top/bottom + left/right. Meio de uma borda: 50% + translateX ou translateY(-50%). Centro: 50% nos dois eixos + translate(-50%, -50%).</p>
+    </article>
+
+    <article class="doc-item">
+      <header><h3>20c. static x relative x absolute</h3><code>.alvo--relative .alvo--absolute</code></header>
+      <div class="doc-palco">
+        <div class="pos-comp">
+          <div><b>static</b><span class="alvo">Alvo</span><p>Vizinho</p></div>
+          <div><b>relative</b><span class="alvo alvo--relative">Alvo</span><p>Vizinho</p></div>
+          <div><b>absolute</b><span class="alvo alvo--absolute">Alvo</span><p>Vizinho</p></div>
+        </div>
+      </div>
+      <p class="doc-dica">relative: o alvo se desloca (top/left 12px) mas o vizinho continua no mesmo lugar. absolute: o alvo sai do fluxo e o vizinho sobe para ocupar o espaço.</p>
+    </article>
+
+    <article class="doc-item">
+      <header><h3>20d. Preencher e esticar</h3><code>.pos-preencher__camada .pos-faixa</code></header>
+      <div class="doc-palco">
+        <div class="pos-preencher">
+          <div class="pos-preencher__camada">Camada no hover</div>
+          <div class="pos-faixa">Faixa colada embaixo</div>
+        </div>
+      </div>
+      <p class="doc-dica">inset: 0 cobre o pai inteiro (atalho de top/right/bottom/left: 0). left: 0 + right: 0 estica na largura toda; bottom: 0 cola embaixo.</p>
+    </article>
+
+    <article class="doc-item">
+      <header><h3>20e. Fita diagonal no canto</h3><code>.pos-fita-pai .pos-fita</code></header>
+      <div class="doc-palco">
+        <div class="pos-fita-pai"><span class="pos-fita">PROMO</span><p>Card com fita no canto superior esquerdo.</p></div>
+      </div>
+      <p class="doc-dica">A fita é um elemento absolute girado com rotate(-45deg). O overflow: hidden do pai corta o que passa da borda.</p>
+    </article>
+
+    <article class="doc-item">
+      <header><h3>20f. Balão com seta e botão que sai do card</h3><code>.pos-balao::after .pos-fab</code></header>
+      <div class="doc-palco">
+        <div class="pos-balao">Olá! Eu sou um balão.</div>
+        <div class="pos-fab-pai">Card com botão metade para fora.<button class="pos-fab" aria-label="Adicionar">+</button></div>
+      </div>
+      <p class="doc-dica">A seta é um ::after com bordas transparentes (truque do triângulo). Valores negativos (bottom: -22px) empurram o elemento para fora do pai.</p>
+    </article>
+
+    <article class="doc-item">
+      <header><h3>20g. Empilhar com z-index</h3><code>.pos-pilha</code></header>
+      <div class="doc-palco">
+        <div class="pos-pilha"><div class="cor-1">1</div><div class="cor-2">2</div><div class="cor-3">3</div></div>
+      </div>
+      <p class="doc-dica">O card 2 fica na frente do 3 porque tem z-index maior. Passe o mouse: o z-index: 10 traz qualquer um para a frente. z-index só funciona em elementos posicionados.</p>
+    </article>
+
+    <article class="doc-item">
+      <header><h3>20h. 4 formas de centralizar</h3><code>.cen-transform .cen-margin .cen-grid .cen-flex</code></header>
+      <div class="doc-palco">
+        <div class="pos-centrar">
+          <div class="cen-transform"><span class="item-c">translate</span></div>
+          <div class="cen-margin"><span class="item-c">inset+margin</span></div>
+          <div class="cen-grid"><span class="item-c">grid</span></div>
+          <div class="cen-flex"><span class="item-c">flex</span></div>
+        </div>
+      </div>
+      <p class="doc-dica">Todas dão o mesmo resultado. Hoje o mais simples é grid + place-items: center. translate e inset + margin: auto servem quando o elemento é absolute.</p>
+    </article>
+
+    <article class="doc-item">
+      <header><h3>20i. position: fixed</h3><code>.pos-fixo</code></header>
+      <div class="doc-palco">
+        <div class="pos-pai pos-fixo-pai"><span class="pos-fixo">Fixo</span>Caixa de demonstração</div>
+      </div>
+      <p class="doc-dica">Na página real, fixed prende o elemento na janela (ex.: botão de WhatsApp ou "voltar ao topo" no canto inferior direito) e ele não rola. Aqui o pai tem transform só para a demo caber na caixa; no seu projeto, não use esse transform.</p>
+    </article>
+
+    <!-- 21. HERO -->
+    <h2 id="hero">21. Hero</h2>
+    <p class="doc-intro">camadas com ::before e position</p>
+    <article class="doc-item">
+      <header><h3>Banner de topo</h3><code>.hero .hero__texto</code></header>
+      <div class="doc-palco">
+        <section class="hero">
+          <div class="hero__texto">
+            <h2 class="texto-titulo">Seu título principal</h2>
+            <p>Uma frase de apoio curta.</p><br>
+            <a class="btn btn--gradiente btn--pill" href="#hero">Chamada para ação</a>
+          </div>
+        </section>
+      </div>
+      <p class="doc-dica">Para usar uma foto: background: url(foto.jpg) center / cover. O ::before pode escurecer a foto para o texto ficar legível.</p>
+    </article>
+
+    <!-- 22. EFEITOS -->
+    <h2 id="efeitos">22. Efeitos</h2>
+    <p class="doc-intro">zoom em hover, skeleton loading, glow</p>
+    <article class="doc-item">
+      <header><h3>Zoom, esqueleto de carregamento e neon</h3><code>.zoom .esqueleto .neon</code></header>
+      <div class="doc-palco">
+        <div class="zoom"><div class="zoom__img"></div></div>
+        <div><div class="esqueleto"></div><br><div class="esqueleto"></div></div>
+        <div class="neon">Neon</div>
+      </div>
+      <p class="doc-dica">Zoom: a imagem cresce com scale dentro de um pai com overflow: hidden. Esqueleto: gradiente com background-position animado. Neon: box-shadow e text-shadow com a mesma cor.</p>
+    </article>
+    <!-- 23. IMAGENS: TAMANHO -->
+    <h2 id="img-tamanho">23. Imagens: tamanho e ajuste</h2>
+    <p class="doc-intro">max-width, object-fit, aspect-ratio. Mantenha o arquivo dogs.jpg na mesma pasta do index.html.</p>
+    <article class="doc-item">
+      <header><h3>Imagem responsiva (arraste o canto da caixa)</h3><code>.img-fluida</code></header>
+      <div class="doc-palco">
+        <div class="img-resize"><img class="img-fluida" src="dogs.jpg" alt="Cachorros brincando na grama"></div>
+      </div>
+      <p class="doc-dica">max-width: 100% + height: auto faz a imagem encolher junto com o pai sem deformar. Use sempre em imagens de conteúdo.</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>object-fit: como a imagem se ajusta a uma caixa fixa</h3><code>.img-cover .img-contain .img-fill .img-none .img-scale</code></header>
+      <div class="doc-palco">
+        <figure class="img-fig"><img class="img-caixa img-cover" src="dogs.jpg" alt="Cachorros"><figcaption>cover</figcaption></figure>
+        <figure class="img-fig"><img class="img-caixa img-contain" src="dogs.jpg" alt="Cachorros"><figcaption>contain</figcaption></figure>
+        <figure class="img-fig"><img class="img-caixa img-fill" src="dogs.jpg" alt="Cachorros"><figcaption>fill</figcaption></figure>
+        <figure class="img-fig"><img class="img-caixa img-none" src="dogs.jpg" alt="Cachorros"><figcaption>none</figcaption></figure>
+        <figure class="img-fig"><img class="img-caixa img-scale" src="dogs.jpg" alt="Cachorros"><figcaption>scale-down</figcaption></figure>
+      </div>
+      <p class="doc-dica">cover preenche e corta; contain mostra inteira (sobram faixas); fill deforma; none mostra o tamanho real recortado.</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Proporções com aspect-ratio</h3><code>.ratio-1 .ratio-43 .ratio-169 .ratio-916</code></header>
+      <div class="doc-palco">
+        <figure class="img-fig"><img class="img-ratio ratio-1" src="dogs.jpg" alt="Cachorros"><figcaption>1 / 1</figcaption></figure>
+        <figure class="img-fig"><img class="img-ratio ratio-43" src="dogs.jpg" alt="Cachorros"><figcaption>4 / 3</figcaption></figure>
+        <figure class="img-fig"><img class="img-ratio ratio-169" src="dogs.jpg" alt="Cachorros"><figcaption>16 / 9</figcaption></figure>
+        <figure class="img-fig"><img class="img-ratio ratio-916" src="dogs.jpg" alt="Cachorros"><figcaption>9 / 16</figcaption></figure>
+      </div>
+      <p class="doc-dica">Defina só a largura e o aspect-ratio dá a altura. Combine com object-fit: cover para não deformar.</p>
+    </article>
+
+    <!-- 24. IMAGENS: POSIÇÃO -->
+    <h2 id="img-posicao">24. Imagens: posição e recortes</h2>
+    <p class="doc-intro">object-position, avatar, clip-path</p>
+    <article class="doc-item">
+      <header><h3>object-position: qual parte da foto aparece</h3><code>.op-esq .op-centro .op-dir .op-ponto .op-patas</code></header>
+      <div class="doc-palco">
+        <figure class="img-fig"><img class="img-pos op-esq" src="dogs.jpg" alt="Cachorros"><figcaption>left</figcaption></figure>
+        <figure class="img-fig"><img class="img-pos op-centro" src="dogs.jpg" alt="Cachorros"><figcaption>center</figcaption></figure>
+        <figure class="img-fig"><img class="img-pos op-dir" src="dogs.jpg" alt="Cachorros"><figcaption>right</figcaption></figure>
+        <figure class="img-fig"><img class="img-pos op-ponto" src="dogs.jpg" alt="Cachorros"><figcaption>72% 55%</figcaption></figure>
+        <figure class="img-fig"><img class="img-pos op-patas" src="dogs.jpg" alt="Cachorros"><figcaption>60% 20%</figcaption></figure>
+      </div>
+      <p class="doc-dica">Com object-fit: cover, object-position escolhe o foco do recorte. Use x% y% para mirar em um ponto exato (aqui, o rosto do cachorro).</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Avatar redondo</h3><code>.img-avatar</code></header>
+      <div class="doc-palco"><img class="img-avatar" src="dogs.jpg" alt="Cachorro"></div>
+      <p class="doc-dica">width = height + border-radius: 50% + object-fit: cover. A borda branca e a sombra dão destaque.</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Formas com clip-path</h3><code>.clip-elipse .clip-tri .clip-hex .clip-diag</code></header>
+      <div class="doc-palco">
+        <img class="img-clip clip-elipse" src="dogs.jpg" alt="Cachorro">
+        <img class="img-clip clip-tri" src="dogs.jpg" alt="Cachorro">
+        <img class="img-clip clip-hex" src="dogs.jpg" alt="Cachorro">
+        <img class="img-clip clip-diag" src="dogs.jpg" alt="Cachorro">
+      </div>
+      <p class="doc-dica">polygon(x y, x y, ...) lista os pontos da forma, em % da caixa. Serve também para cantos cortados em banners.</p>
+    </article>
+
+    <!-- 25. IMAGEM DE FUNDO -->
+    <h2 id="img-fundo">25. Imagem como fundo</h2>
+    <p class="doc-intro">background-image, background-size, background-position, overlay</p>
+    <article class="doc-item">
+      <header><h3>Tamanho e repetição do fundo</h3><code>.bg-foto .bg-cover .bg-contain .bg-pct .bg-mosaico</code></header>
+      <div class="doc-palco">
+        <figure class="img-fig"><div class="bg-foto bg-cover"></div><figcaption>cover</figcaption></figure>
+        <figure class="img-fig"><div class="bg-foto bg-contain"></div><figcaption>contain</figcaption></figure>
+        <figure class="img-fig"><div class="bg-foto bg-pct"></div><figcaption>50% no canto</figcaption></figure>
+        <figure class="img-fig"><div class="bg-foto bg-mosaico"></div><figcaption>mosaico (56px)</figcaption></figure>
+      </div>
+      <p class="doc-dica">background-size: cover = preenche; contain = cabe inteira; valor em % ou px = tamanho manual. no-repeat evita o mosaico.</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Parallax (role a página)</h3><code>.bg-parallax</code></header>
+      <div class="doc-palco"><div class="bg-parallax"></div></div>
+      <p class="doc-dica">background-attachment: fixed (dentro do atalho background) deixa a foto parada enquanto a página rola. No iPhone/iOS costuma não funcionar.</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Foto com texto por cima</h3><code>.foto-hero .foto-hero__texto</code></header>
+      <div class="doc-palco">
+        <section class="foto-hero">
+          <div class="foto-hero__texto"><h2 class="texto-titulo">Brincadeira na grama</h2><p>O degradê escuro no ::before garante a leitura do texto.</p></div>
+        </section>
+      </div>
+      <p class="doc-dica">O ::before cobre a foto com um linear-gradient de preto para transparente. Em foto clara, aumente o preto (0.75).</p>
+    </article>
+
+    <!-- 26. IMAGENS: FILTROS -->
+    <h2 id="img-efeitos">26. Imagens: filtros e efeitos</h2>
+    <p class="doc-intro">filter, transform no hover, moldura e galeria</p>
+    <article class="doc-item">
+      <header><h3>Filtros</h3><code>.f-cinza .f-sepia .f-blur .f-brilho .f-contraste .f-saturar .f-cor .f-hover</code></header>
+      <div class="doc-palco">
+        <figure class="img-fig"><img class="img-filtro f-cinza" src="dogs.jpg" alt="Cachorros"><figcaption>grayscale</figcaption></figure>
+        <figure class="img-fig"><img class="img-filtro f-sepia" src="dogs.jpg" alt="Cachorros"><figcaption>sepia</figcaption></figure>
+        <figure class="img-fig"><img class="img-filtro f-blur" src="dogs.jpg" alt="Cachorros"><figcaption>blur</figcaption></figure>
+        <figure class="img-fig"><img class="img-filtro f-brilho" src="dogs.jpg" alt="Cachorros"><figcaption>brightness</figcaption></figure>
+        <figure class="img-fig"><img class="img-filtro f-contraste" src="dogs.jpg" alt="Cachorros"><figcaption>contrast</figcaption></figure>
+        <figure class="img-fig"><img class="img-filtro f-saturar" src="dogs.jpg" alt="Cachorros"><figcaption>saturate</figcaption></figure>
+        <figure class="img-fig"><img class="img-filtro f-cor" src="dogs.jpg" alt="Cachorros"><figcaption>hue-rotate</figcaption></figure>
+        <figure class="img-fig"><img class="img-filtro f-hover" src="dogs.jpg" alt="Cachorros"><figcaption>cinza → cor (hover)</figcaption></figure>
+      </div>
+      <p class="doc-dica">É possível combinar: filter: grayscale(1) contrast(1.2) blur(2px).</p>
+    </article>
+    <article class="doc-item">
+      <header><h3>Zoom, polaroid e galeria</h3><code>.img-zoom .polaroid .galeria .g-grande</code></header>
+      <div class="doc-palco">
+        <div class="img-zoom"><img src="dogs.jpg" alt="Cachorros"></div>
+        <figure class="polaroid"><img src="dogs.jpg" alt="Cachorros" class="op-ponto"><figcaption>Dia no parque</figcaption></figure>
+        <div class="galeria">
+          <img class="g-grande op-dir" src="dogs.jpg" alt="Cachorros">
+          <img class="op-esq" src="dogs.jpg" alt="Cachorro">
+          <img class="op-patas" src="dogs.jpg" alt="Patas">
+          <img class="op-ponto" src="dogs.jpg" alt="Rosto">
+          <img class="op-centro" src="dogs.jpg" alt="Cachorros">
+          <img class="op-esq" src="dogs.jpg" alt="Cachorro">
+        </div>
+      </div>
+      <p class="doc-dica">Zoom: scale() na imagem + overflow: hidden no pai. Galeria: grid com span 2 na imagem grande; cada miniatura usa um object-position diferente.</p>
+    </article>
+  </main>
+
+</body>
+</html>
